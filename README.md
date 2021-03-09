@@ -18,6 +18,39 @@ it, simply add the following line to your Podfile:
 
 ```ruby
 pod 'XLRouter'
+
+- (void)addRegist {
+    
+    [XLRouterManager addRouteWithScheme:@"xll" handler:^(NSURL * _Nonnull url, NSDictionary * _Nonnull userInfo, XLRouterOpenCompletion  _Nonnull routerOpenCompletion) {
+        NSLog(@"didRecieveMsgUrl:%@,userInfo:%@",url,userInfo);
+        if (routerOpenCompletion) {
+            routerOpenCompletion(YES,@"callback1");
+        }
+    }];
+    
+    [XLRouterManager addRouteWithScheme:@"hello" withHost:@"kitty" handler:^(NSURL * _Nonnull url, NSDictionary * _Nonnull userInfo, XLRouterOpenCompletion  _Nonnull routerOpenCompletion) {
+        NSLog(@"didRecieveMsgUrl:%@,userInfo:%@",url,userInfo);
+    }];
+}
+
+- (void)callRouter {
+    NSURL *url = [NSURL URLWithString:@"xll://good/happy?name=xiaoming"];
+    if ([XLRouterManager canOpenURL:url]) {
+        NSDictionary *userInfo = @{@"key1":@"token1"};
+        
+        [XLRouterManager openURL:url withUserInfo:userInfo completion:^(BOOL isSucc, id  _Nonnull data) {
+            if (isSucc) {
+                NSLog(@"%@",data);
+            }
+        }];
+    }
+    
+    NSURL *url1 = [NSURL URLWithString:@"hello://kitty/happy?name=xiaoming"];
+    NSDictionary *userInfo1 = @{@"key2":@"token2"};
+    [XLRouterManager openURL:url1 withUserInfo:userInfo1];
+}
+
+
 ```
 
 ## Author

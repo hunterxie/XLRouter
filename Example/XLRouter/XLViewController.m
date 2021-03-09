@@ -51,9 +51,6 @@
     NSURL *url1 = [NSURL URLWithString:@"hello://kitty/happy?name=xiaoming"];
     NSDictionary *userInfo1 = @{@"key2":@"token2"};
     [XLRouterManager openURL:url1 withUserInfo:userInfo1];
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
