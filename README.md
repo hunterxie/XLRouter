@@ -17,8 +17,6 @@ XLRouter is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'XLRouter'
-
 - (void)addRegist {
     
     [XLRouterManager addRouteWithScheme:@"xll" handler:^(NSURL * _Nonnull url, NSDictionary * _Nonnull userInfo, XLRouterOpenCompletion  _Nonnull routerOpenCompletion) {
