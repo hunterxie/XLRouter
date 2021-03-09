@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'XLRouter_Example' do
+  pod 'XLRouter', :path => '../'
+
+  target 'XLRouter_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

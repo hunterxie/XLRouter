@@ -1,0 +1,22 @@
+{
+  "name": "XLRouter",
+  "version": "0.1.0",
+  "summary": "A short description of XLRouter.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/hunterxie/XLRouter",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "hunterxie": "843144392@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/hunterxie/XLRouter.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source_files": "XLRouter/Classes/**/*"
+}
